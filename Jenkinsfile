@@ -131,7 +131,7 @@ pipeline {
 
                     docker run -d \
                     --name ${CONTAINER_NAME} \
-                    -p ${APPLICATION_PORT}:8080 \
+                    -p ${APPLICATION_PORT}:8081 \
                     javaimage:${IMAGE_TAG}
                 '''
             }
@@ -216,7 +216,7 @@ pipeline {
                     docker run -d \
                     --name ${CONTAINER_NAME} \
                     --restart unless-stopped \
-                    -p ${APPLICATION_PORT}:8080 \
+                    -p ${APPLICATION_PORT}:8081 \
                     ${IMAGE_NAME}
                 '''
             }
