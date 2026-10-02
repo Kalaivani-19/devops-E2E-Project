@@ -132,7 +132,7 @@ pipeline {
                     docker run -d \
                     --name ${CONTAINER_NAME} \
                     -p ${APPLICATION_PORT}:8080 \
-                    ${ECR_REPOSITORY}:${IMAGE_TAG}
+                    javaimage:${IMAGE_TAG}
                 '''
             }
         }
@@ -186,7 +186,7 @@ pipeline {
 
                 sh '''
                     docker tag \
-                    ${ECR_REPOSITORY}:${IMAGE_TAG} \
+                    javaimage:${IMAGE_TAG} \
                     ${IMAGE_NAME}
                 '''
             }
