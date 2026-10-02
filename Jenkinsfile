@@ -12,7 +12,7 @@ pipeline {
 
         string(
             name: 'ECR_REPOSITORY',
-            defaultValue: 'devops-training-app',
+            defaultValue: 'devops-E2E-Project',
             description: 'ECR Repository Name'
         )
 
