@@ -95,6 +95,7 @@ pipeline {
                     -Dsonar.projectKey=devops-training-app \
                     -Dsonar.projectName=devops-training-app
                 '''
+                  }
                 }
             }
         }
