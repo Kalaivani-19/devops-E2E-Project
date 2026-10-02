@@ -117,7 +117,7 @@ pipeline {
 
                 sh '''
                     docker build \
-                    -t ${ECR_REPOSITORY}:${IMAGE_TAG} .
+                    -t javaimage:${IMAGE_TAG} .
                 '''
             }
         }
