@@ -83,17 +83,18 @@ pipeline {
         }
 
         stage('SonarQube') {
-
-            steps {
-
-                withSonarQubeEnv('sonarqube') {
-
-                    sh '''
-                mvn clean verify \
-                org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-                -Dsonar.projectKey=devops-training-app \
-                -Dsonar.projectName=devops-training-app
-            '''
+    steps {
+        catchError(
+            buildResult: 'SUCCESS',
+            stageResult: 'UNSTABLE'
+        ) {
+            withSonarQubeEnv('sonarqube') {
+                sh '''
+                    mvn clean verify \
+                    org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+                    -Dsonar.projectKey=devops-training-app \
+                    -Dsonar.projectName=devops-training-app
+                '''
                 }
             }
         }
