@@ -89,10 +89,11 @@ pipeline {
                 withSonarQubeEnv('sonarqube') {
 
                     sh '''
-                        mvn clean verify sonar:sonar \
-                        -Dsonar.projectKey=devops-training-app \
-                        -Dsonar.projectName=devops-training-app
-                    '''
+                mvn clean verify \
+                org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+                -Dsonar.projectKey=devops-training-app \
+                -Dsonar.projectName=devops-training-app
+            '''
                 }
             }
         }
